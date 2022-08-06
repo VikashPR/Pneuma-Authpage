@@ -145,8 +145,8 @@
                     <div class="signup-or-separator">
                         <h6 class="text">Or Sign-In with</h6>
                         <!-- <hr /> -->
-                        </div>
-                        <div class="mdl-social-button">
+                    </div>
+                    <div class="mdl-social-button">
                         <!-- <a th:href="${authorizeUrls.get(socialProvider.getId())}"
                             class="'social-link-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-' + ${socialProvider.getType()}"
                             th:each="socialProvider : ${socialProviders}">
@@ -162,59 +162,47 @@
                             </span>
                         </a> -->
 
-                        <!-- <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=192643134735-hr655jov68tdtlii740b3rj2s9n2t1mp.apps.googleusercontent.com&amp;response_type=code&amp;scope=openid profile email&amp;state=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJwIjoiMTQwZGE5MDctOTAxZC00MjUzLThkYTktMDc5MDFkZDI1MzZkIiwicSI6ImNsaWVudF9pZD1ncmF2aXRlZSZyZXNwb25zZV90eXBlPWNvZGUmcmVkaXJlY3RfdXJpPWh0dHBzJTNBJTJGJTJGY29uc29sZS5vcmlnaW5tbC5jbG91ZCUyRnZhbGlkYXRlLXRva2VuIn0.wC8pagYfF8iEJXZRfTa3OtuKuT0uw7sr3OPpMaAR-o8&amp;redirect_uri=https://auth.iam.originml.cloud/originml/login/callback"
-                            class="social-link-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-google">
-                            <span class="socialIconContainer gap9">
-                                <img width="18" class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-                                <span>Google</span>
-                            </span> </a><a
-                            href="https://www.linkedin.com/oauth/v2/authorization?client_id=86niueh0as7rsn&amp;redirect_uri=https://auth.iam.originml.cloud/originml/login/callback&amp;response_type=code&amp;scope=r_emailaddress%20r_liteprofile&amp;state=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJwIjoiZTY2MjEzNDMtNjQ2OS00OWFiLWEyMTMtNDM2NDY5MTlhYjg4IiwicSI6ImNsaWVudF9pZD1ncmF2aXRlZSZyZXNwb25zZV90eXBlPWNvZGUmcmVkaXJlY3RfdXJpPWh0dHBzJTNBJTJGJTJGY29uc29sZS5vcmlnaW5tbC5jbG91ZCUyRnZhbGlkYXRlLXRva2VuIn0.olfZXfx_ElRb8JqPgOB5AmXmna9QWC3EqOxFZqX0Mx4"
-                            class="social-link-button linkedin-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                            <span class="socialIconContainer gap6">
-                                <img width="25" class="google-icon" src="https://storage.googleapis.com/oml-console-app-bucket/icons8-linkedin.svg" />
-                                <span>Linkedin</span>
+                        <!-- NOTE Custom Social Btn -->
+                        <a th:href="${authorizeUrls.get(socialProvider.getId())}" class="social-btn"
+                            th:each="socialProvider : ${socialProviders}">
+                            <span th:if="${socialProvider.getType()} == 'google'" class="">
+                                <span th:text="${socialProvider.getName()}"></span>
+                                <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.63732 4.90407V7.20473H9.83198C9.53465 8.66673 8.28998 9.50673 6.63732 9.50673C4.71235 9.48024 3.16576 7.91222 3.16576 5.98707C3.16576 4.06192 4.71235 2.49389 6.63732 2.4674C7.43746 2.46644 8.21296 2.74412 8.83065 3.25273L10.564 1.5194C8.57571 -0.228554 5.67199 -0.453375 3.43836 0.967697C1.20472 2.38877 0.178 5.11421 0.918817 7.65581C1.65963 10.1974 3.98995 11.9444 6.63732 11.9427C9.61532 11.9427 12.3233 9.77673 12.3233 5.98673C12.3187 5.62183 12.274 5.25853 12.19 4.9034L6.63732 4.90407Z"
+                                        fill="#6F757E" />
+                                </svg>
                             </span>
-                            </a> -->
-                            
-                            <!-- NOTE Custom Social Btn -->
-                            <a href="#" class="social-btn">
-                                <span class="">
-                                    <span>Google</span>
-                                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M6.63732 4.90407V7.20473H9.83198C9.53465 8.66673 8.28998 9.50673 6.63732 9.50673C4.71235 9.48024 3.16576 7.91222 3.16576 5.98707C3.16576 4.06192 4.71235 2.49389 6.63732 2.4674C7.43746 2.46644 8.21296 2.74412 8.83065 3.25273L10.564 1.5194C8.57571 -0.228554 5.67199 -0.453375 3.43836 0.967697C1.20472 2.38877 0.178 5.11421 0.918817 7.65581C1.65963 10.1974 3.98995 11.9444 6.63732 11.9427C9.61532 11.9427 12.3233 9.77673 12.3233 5.98673C12.3187 5.62183 12.274 5.25853 12.19 4.9034L6.63732 4.90407Z"
-                                            fill="#6F757E" />
-                                    </svg>
-                                </span>
+                        </a>
+                        <a th:href="${authorizeUrls.get(socialProvider.getId())}" class="social-btn"
+                            th:each="socialProvider : ${socialProviders}">
+                            <span th:if="${socialProvider.getType()} == 'facebook'" class="">
+                                <span th:text="${socialProvider.getName()}"></span>
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.33466 7.00144C0.335435 10.281 2.72026 13.0735 5.95933 13.5874V8.92811H4.26799V7.00144H5.96133V5.53478C5.88563 4.8398 6.12301 4.14717 6.60909 3.64473C7.09517 3.14229 7.77956 2.88212 8.47666 2.93478C8.97702 2.94286 9.47612 2.98742 9.96999 3.06811V4.70744H9.12733C8.83722 4.66945 8.54556 4.76526 8.33451 4.96789C8.12345 5.17052 8.01584 5.45803 8.04199 5.74944V7.00144H9.88933L9.59399 8.92878H8.04199V13.5874C11.545 13.0338 14.0014 9.83463 13.6317 6.30749C13.2619 2.78036 10.1955 0.160064 6.65388 0.344897C3.11223 0.529729 0.335223 3.45498 0.33466 7.00144Z"
+                                        fill="#6F757E" />
+                                </svg>
+                            </span>
                             </a>
-                            <a href="#" class="social-btn">
-                                <span class="">
-                                    <span>Facebook</span>
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.33466 7.00144C0.335435 10.281 2.72026 13.0735 5.95933 13.5874V8.92811H4.26799V7.00144H5.96133V5.53478C5.88563 4.8398 6.12301 4.14717 6.60909 3.64473C7.09517 3.14229 7.77956 2.88212 8.47666 2.93478C8.97702 2.94286 9.47612 2.98742 9.96999 3.06811V4.70744H9.12733C8.83722 4.66945 8.54556 4.76526 8.33451 4.96789C8.12345 5.17052 8.01584 5.45803 8.04199 5.74944V7.00144H9.88933L9.59399 8.92878H8.04199V13.5874C11.545 13.0338 14.0014 9.83463 13.6317 6.30749C13.2619 2.78036 10.1955 0.160064 6.65388 0.344897C3.11223 0.529729 0.335223 3.45498 0.33466 7.00144Z"
-                                            fill="#6F757E" />
-                                    </svg>
-                            
-                                </span>
-                            </a>
-                            <a href="#" class="social-btn">
-                                <span class="">
-                                    <span>Microsoft</span>
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.914664 0.37067C0.818892 0.413218 0.732025 0.504928 0.695076 0.602496C0.675989 0.652856 0.667292 1.60058 0.667292 3.62954V6.58329H3.79199H6.91668V3.4586V0.333903L3.95473 0.334918C1.54452 0.335752 0.978225 0.342418 0.914664 0.37067ZM7.74993 3.45829V6.58329H10.8749H14L13.9931 3.59069C13.9863 0.614136 13.986 0.597705 13.9326 0.526202C13.9031 0.486648 13.8466 0.430144 13.807 0.400615C13.7355 0.347209 13.7191 0.346896 10.7425 0.3401L7.74993 0.333252V3.45829ZM0.67349 10.4091C0.680286 13.3857 0.680598 13.4021 0.734004 13.4736C0.763533 13.5132 0.820038 13.5697 0.859591 13.5992C0.931095 13.6526 0.947525 13.6529 3.92408 13.6597L6.91668 13.6666V10.5416V7.41654H3.79167H0.666641L0.67349 10.4091ZM7.74993 10.5416V13.6666L10.7425 13.6597C13.7191 13.6529 13.7355 13.6526 13.807 13.5992C13.8466 13.5697 13.9031 13.5132 13.9326 13.4736C13.986 13.4021 13.9863 13.3857 13.9931 10.4091L14 7.41654H10.8749H7.74993V10.5416Z"
-                                            fill="#6F757E" />
-                                    </svg>
+                        <a th:href="${authorizeUrls.get(socialProvider.getId())}" th:each="socialProvider : ${socialProviders}"
+                            class="social-btn">
+                            <span th:if="${socialProvider.getType()} == 'microsoft'" class="">
+                                <span th:text="${socialProvider.getName()}"></span>
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.914664 0.37067C0.818892 0.413218 0.732025 0.504928 0.695076 0.602496C0.675989 0.652856 0.667292 1.60058 0.667292 3.62954V6.58329H3.79199H6.91668V3.4586V0.333903L3.95473 0.334918C1.54452 0.335752 0.978225 0.342418 0.914664 0.37067ZM7.74993 3.45829V6.58329H10.8749H14L13.9931 3.59069C13.9863 0.614136 13.986 0.597705 13.9326 0.526202C13.9031 0.486648 13.8466 0.430144 13.807 0.400615C13.7355 0.347209 13.7191 0.346896 10.7425 0.3401L7.74993 0.333252V3.45829ZM0.67349 10.4091C0.680286 13.3857 0.680598 13.4021 0.734004 13.4736C0.763533 13.5132 0.820038 13.5697 0.859591 13.5992C0.931095 13.6526 0.947525 13.6529 3.92408 13.6597L6.91668 13.6666V10.5416V7.41654H3.79167H0.666641L0.67349 10.4091ZM7.74993 10.5416V13.6666L10.7425 13.6597C13.7191 13.6529 13.7355 13.6526 13.807 13.5992C13.8466 13.5697 13.9031 13.5132 13.9326 13.4736C13.986 13.4021 13.9863 13.3857 13.9931 10.4091L14 7.41654H10.8749H7.74993V10.5416Z"
+                                        fill="#6F757E" />
+                                </svg>
                             </span>
                         </a>
                     </div>
                 </div>
                 <!-- NOTE PasswordLess action -->
                 <!-- <div class="login-form-additional-actions" th:if="${allowPasswordless  && hideLoginForm}"><a th:href="${passwordlessAction}">Sign in with fingerprint, device or security key</a> -->
-                </div>
-                </div>
-                </div>
+            </div>
+            </div>
+            </div>
     </div>
 
     <!--[if lt IE 10]>
