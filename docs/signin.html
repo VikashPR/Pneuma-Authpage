@@ -34,8 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml"
-        href="https://www.pneuma.club/pneuma-favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="https://www.pneuma.club/pneuma-favicon.svg" />
 
     <script th:if="${bot_detection_plugin == 'google-recaptcha-v3-am-bot-detection'}"
         th:src="${'https://www.google.com/recaptcha/api.js?render=' + bot_detection_configuration.siteKey + '&badge=bottomleft'}"></script>
@@ -147,6 +146,7 @@
                         <!-- <hr /> -->
                     </div>
                     <div class="mdl-social-button">
+                        <!-- Original Logic -->
                         <!-- <a th:href="${authorizeUrls.get(socialProvider.getId())}"
                             class="'social-link-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-' + ${socialProvider.getType()}"
                             th:each="socialProvider : ${socialProviders}">
@@ -191,8 +191,8 @@
                 <!-- NOTE PasswordLess action -->
                 <!-- <div class="login-form-additional-actions" th:if="${allowPasswordless  && hideLoginForm}"><a th:href="${passwordlessAction}">Sign in with fingerprint, device or security key</a> -->
             </div>
-            </div>
-            </div>
+        </div>
+        </div>
     </div>
 
     <!--[if lt IE 10]>
