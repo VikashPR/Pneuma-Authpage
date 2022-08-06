@@ -1,0 +1,278 @@
+body {
+  font-family: 'Rubik', sans-serif !important;
+}
+.mdl-layout.mdl-js-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 14px;
+}
+
+.login-container {
+  width: 480px;
+}
+
+.login-form {
+  background: #ffffff;
+  padding: 45px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.login-form-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-title > label {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  line-height: 1.1em;
+}
+
+.grayColor {
+  color: #6e6b7b !important;
+  display: block;
+  margin-top: 4px;
+}
+
+.login-form-actions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.login-form-actions > .no-margin-left {
+  margin-left: 0px;
+}
+
+.login-form-additional-actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+a {
+  color: #54a346 !important;
+}
+
+.login-form-additional-actions > div {
+  margin: 5px;
+}
+
+.login-form-content .input-textfield {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.login-form-content .input-textfield:last-child {
+  margin-bottom: 12px;
+}
+
+.login-form-content .input-textfield input {
+  border: 1px solid #e1e4e8;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.login-error-info {
+  font-weight: bold;
+  color: #ef3b3a;
+  padding: 20px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.errorColor {
+  color: #ef3b3a !important;
+}
+
+.login-error-info .error {
+  font-weight: bold;
+}
+
+.login-error-info .error_description:before {
+  content: ' : ';
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.social-login-buttons {
+  margin-top: 10px;
+}
+
+.social-login-buttons a {
+  margin-bottom: 10px;
+}
+
+.mdl-social-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.mdl-social-button:hover {
+  color: transparent !important;
+}
+
+.mdl-button {
+  min-width: 100px;
+  color: #fff;
+  padding: 0 22px;
+  background-color: #54a346;
+  border-radius: 5px;
+  font-family: 'Rubik', sans-serif !important;
+}
+
+.custom-signin:hover {
+  background-color: #54a346 !important;
+  color: #fff !important;
+}
+
+.signup-or-separator {
+  position: relative;
+  height: 34px;
+  text-align: center;
+  background: none;
+  margin-bottom: 10px;
+}
+
+.signup-or-separator hr {
+  width: 90%;
+  margin: -16px auto 10px auto;
+  border-top: 1px solid #dce0e0;
+}
+
+.signup-or-separator .text {
+  display: inline-block;
+  padding: 8px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.forgot-password-form-title > span.warning {
+  color: #ea5455;
+  font-weight: bold;
+}
+
+.flex-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+
+#passwordSettings {
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 18px;
+  margin-bottom: 8px;
+}
+#passwordSettings p {
+  padding: 0 35px;
+  margin: 0 5px;
+  font-size: 11px;
+}
+
+#passwordSettings p:first-of-type {
+  margin-top: 5px;
+}
+.valid {
+  color: #54a346;
+}
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: '✔';
+}
+.invalid {
+  color: #ef3b3a;
+}
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: '✖';
+}
+
+.advice {
+  color: black;
+}
+
+.advice:before {
+  position: relative;
+  left: -35px;
+  content: '•';
+}
+.mdl-button:disabled {
+  opacity: 0.4 !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  background-color: #54a346 !important;
+}
+.togglePasswordEye {
+  cursor: pointer;
+  position: relative;
+  bottom: 29px;
+  left: 9px;
+}
+.hidePassword {
+  display: none;
+}

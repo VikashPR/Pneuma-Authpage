@@ -1,0 +1,430 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #6F757E;
+}
+
+
+.mdl-layout.mdl-js-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 14px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/**********
+ * HEADER *
+ **********/
+
+.header {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #E7E8E9;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    margin-left: 160px;
+}
+
+.header-menu {
+    display: flex;
+    margin-right: 100px;
+}
+
+.menu-item {
+    margin-right: 3rem;
+}
+
+.menu-item a {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.login-container {
+    width: 480px;
+}
+
+.login-form {
+    background: #ffffff;
+    padding: 45px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.login-form-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-title>label {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.login-form-title>span {
+    color: grey;
+}
+
+.login-form-actions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.login-form-actions>.no-margin-left {
+    margin-left: 0px;
+}
+
+.login-form-additional-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+
+
+.login-form-additional-actions>div {
+    margin: 5px;
+}
+
+.login-form-content .input-textfield {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.login-form-content .input-textfield:last-child {
+    margin-bottom: 20px;
+}
+
+.login-form-content .input-textfield input {
+    border: 1px solid #e1e4e8;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.login-error-info {
+    font-weight: bold;
+    color: #ef3b3a;
+    padding: 20px;
+    border-radius: 2px;
+    border: 1px solid #e2e5e7;
+    margin-bottom: 20px;
+}
+
+.login-error-info .error {
+    font-weight: bold;
+}
+
+.login-error-info .error_description:before {
+    content: ' : ';
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.social-login-buttons {
+    margin-top: 10px;
+    font-family: 'Rubik', sans-serif !important;
+}
+
+.social-login-buttons a {
+    margin-bottom: 10px;
+    background: #fff !important;
+}
+
+.social-login-buttons a:hover {
+    background-color: rgba(158, 158, 158, 0.2) !important;
+}
+
+.mdl-social-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mdl-social-button:hover {
+    color: transparent !important;
+}
+
+.mdl-button {
+    min-width: 100px;
+    color: #fff;
+    padding: 0 22px;
+    background-color: #54a346;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.custom-signin:hover {
+    background-color: #54a346 !important;
+    color: #fff !important;
+}
+
+.signup-or-separator {
+    position: relative;
+    height: 34px;
+    text-align: center;
+    background: none;
+    margin-bottom: 10px;
+}
+
+.signup-or-separator hr {
+    width: 90%;
+    margin: -16px auto 10px auto;
+    border-top: 1px solid #dce0e0;
+}
+
+.signup-or-separator .text {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Rubik', sans-serif !important;
+}
+
+/*********************
+* Social Buttons
+*********************/
+
+.btn-google {
+    color: #444;
+    background-color: #ffffff;
+}
+
+.btn-microsoft {
+    color: #444;
+    background-color: #ffffff;
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border: 1px solid #335190;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+    color: #fff;
+    background-color: #294786;
+}
+
+.btn-twitter {
+    color: #fff;
+    background-color: #00aced;
+    border: 1px solid #009fdb;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus {
+    color: #fff;
+    background-color: #0090c7;
+}
+
+.btn-foursquare {
+    color: #fff;
+    background-color: #f94877;
+    border: 1px solid #f8215a;
+}
+
+.btn-foursquare:hover,
+.btn-foursquare:focus {
+    color: #fff;
+    background-color: #f71752;
+}
+
+.btn-github {
+    color: #fff;
+    background-color: #444;
+    border: 1px solid #3b3b3b;
+}
+
+.btn-github:hover,
+.btn-github:focus {
+    color: #fff;
+    background-color: #303030 !important;
+}
+
+.mdl-button:hover {
+    padding: 0 22px;
+}
+
+.btn-instagram {
+    color: #fff;
+    background-color: #3f729b;
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+    color: #fff;
+    background-color: #305777 !important;
+}
+
+.btn-yahoo {
+    color: #fff;
+    background-color: #720e9e;
+}
+
+.btn-yahoo:hover,
+.btn-yahoo:focus {
+    color: #fff;
+    background-color: #600e85 !important;
+}
+
+.btn-live {
+    color: #fff;
+    background-color: #2672ec;
+}
+
+.btn-live:hover,
+.btn-live:focus {
+    color: #fff;
+    background-color: #125acd !important;
+}
+
+.btn-twitch {
+    color: #fff;
+    background-color: #6441a5;
+}
+
+.btn-twitch:hover,
+.btn-twitch:focus {
+    color: #fff;
+    background-color: #7550ba !important;
+}
+
+.btn-bitbucket {
+    color: #fff;
+    background-color: #10375e;
+}
+
+.btn-bitbucket:hover,
+.btn-bitbucket:focus {
+    color: #fff;
+    background-color: #0d2c4a !important;
+}
+
+.btn-spotify {
+    color: #fff;
+    background-color: #2ebd59;
+}
+
+.btn-spotify:hover,
+.btn-spotify:focus {
+    color: #fff;
+    background-color: #29a34e !important;
+}
+
+.btn-franceconnect {
+    background: none;
+    box-shadow: none;
+    height: 70px;
+}
+
+.material-icons {
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.flex-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.btn-linkedin {
+    background-color: #fff !important;
+}
+
+.socialIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6e6b7b !important;
+    text-transform: capitalize !important;
+}
+
+.socialIconContainer span {
+    font-family: 'Rubik', sans-serif !important;
+}
+
+.gap9 {
+    gap: 11px;
+}
+
+.gap6 {
+    gap: 6px;
+}
+
+.social-link-button:hover {
+    background-color: rgba(158, 158, 158, 0.2) !important;
+}
+
+.togglePasswordEye {
+    cursor: pointer;
+    position: relative;
+    bottom: 26px;
+    left: 9px;
+}
+
+.hidePassword {
+    display: none;
+}
