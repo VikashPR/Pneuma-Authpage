@@ -173,20 +173,10 @@
                                         fill="#6F757E" />
                                 </svg>
                             </span>
-                        </a>
-                        <a th:href="${authorizeUrls.get(socialProvider.getId())}" class="social-btn"
-                            th:each="socialProvider : ${socialProviders}">
-                            <span th:if="${socialProvider.getType()} == 'facebook'" class="">
+                            <span th:if="${socialProvider.getType()} == 'linkedin'" class="">
                                 <span th:text="${socialProvider.getName()}"></span>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M0.33466 7.00144C0.335435 10.281 2.72026 13.0735 5.95933 13.5874V8.92811H4.26799V7.00144H5.96133V5.53478C5.88563 4.8398 6.12301 4.14717 6.60909 3.64473C7.09517 3.14229 7.77956 2.88212 8.47666 2.93478C8.97702 2.94286 9.47612 2.98742 9.96999 3.06811V4.70744H9.12733C8.83722 4.66945 8.54556 4.76526 8.33451 4.96789C8.12345 5.17052 8.01584 5.45803 8.04199 5.74944V7.00144H9.88933L9.59399 8.92878H8.04199V13.5874C11.545 13.0338 14.0014 9.83463 13.6317 6.30749C13.2619 2.78036 10.1955 0.160064 6.65388 0.344897C3.11223 0.529729 0.335223 3.45498 0.33466 7.00144Z"
-                                        fill="#6F757E" />
-                                </svg>
+                                <img width="25" class="google-icon" src="https://storage.googleapis.com/oml-console-app-bucket/icons8-linkedin.svg" />
                             </span>
-                            </a>
-                        <a th:href="${authorizeUrls.get(socialProvider.getId())}" th:each="socialProvider : ${socialProviders}"
-                            class="social-btn">
                             <span th:if="${socialProvider.getType()} == 'microsoft'" class="">
                                 <span th:text="${socialProvider.getName()}"></span>
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
