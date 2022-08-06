@@ -230,7 +230,7 @@ a:focus {
 }
 
 .mdl-social-button:hover {
-  color: transparent !important;
+  color: transparent ;
 }
 
 .mdl-button {
@@ -242,8 +242,8 @@ a:focus {
 }
 
 .custom-signin:hover {
-  background-color: #2c6c7bdc !important;
-  color: #fff !important;
+  background-color: #2c6c7bdc ;
+  color: #fff ;
 }
 
 .signup-or-separator {
