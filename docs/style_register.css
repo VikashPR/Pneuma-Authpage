@@ -30,7 +30,7 @@ a {
 }
 
 .header-logo {
-  margin-left: 160px;
+  margin-left: 100px;
 }
 
 .header-menu {
@@ -39,14 +39,13 @@ a {
 }
 
 .menu-item {
-  margin-right: 3rem;
+  margin-left: 3rem;
 }
 
 .menu-item a {
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 20px;
-  color: #6f757e;
 }
 
 /**************

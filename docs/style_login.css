@@ -45,7 +45,7 @@ a {
 }
 
 .header-logo {
-  margin-left: 160px;
+  margin-left: 100px;
 }
 
 .header-menu {
@@ -54,7 +54,7 @@ a {
 }
 
 .menu-item {
-  margin-right: 3rem;
+  margin-left: 3rem;
 }
 
 .menu-item a {
