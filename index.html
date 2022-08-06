@@ -30,10 +30,10 @@
     <!-- Favicon and touch icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <link rel="icon" type="image/svg+xml"
         href="https://storage.googleapis.com/oml-console-app-bucket/oml-favicon.svg" />
 
@@ -80,8 +80,8 @@
                                 <label class="login-step">Step 1</label>
                             </div>
                             <span>Hello, tell us a little about yourself<span th:text="${domain.name}"></span></span>
-                            </div>
-                            <!-- <div>
+                        </div>
+                        <!-- <div>
                             <img class="originImage" width="150"
                                 src="https://storage.googleapis.com/oml-console-app-bucket/originml-logo-default.svg"
                                 alt="OriginML" />
@@ -134,18 +134,20 @@
                                 <a th:href="${registerAction}">Sign up</a>
                             </div>
                         </div>
-                        <div th:if="${allowPasswordless && !identifierFirstLoginEnabled}"
+                        <!-- NOTE PasswordLess action -->
+                        <!-- <div th:if="${allowPasswordless && !identifierFirstLoginEnabled}"
                             class="login-form-additional-actions">
                             <a th:href="${passwordlessAction}">Sign in with fingerprint, device or security key</a>
-                        </div>
+                        </div> -->
                     </form>
-                    <div th:if="${socialProviders and !socialProviders.empty}" class="social-login-buttons">
-                        <div class="signup-or-separator">
-                            <h6 class="text">or continue with</h6>
-                            <hr />
+                </div>
+                <div th:if="${socialProviders and !socialProviders.empty}" class="social-login-buttons">
+                    <div class="signup-or-separator">
+                        <h6 class="text">Or Sign-In with</h6>
+                        <hr />
                         </div>
                         <div class="mdl-social-button">
-                            <a th:href="${authorizeUrls.get(socialProvider.getId())}"
+                        <!-- <a th:href="${authorizeUrls.get(socialProvider.getId())}"
                                 class="'social-link-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-' + ${socialProvider.getType()}"
                                 th:each="socialProvider : ${socialProviders}">
                                 <span th:if="${socialProvider.getType()} == 'google'" class="socialIconContainer gap9">
@@ -153,47 +155,33 @@
                                         src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                                     <span th:text="${socialProvider.getName()}"></span>
                                 </span>
-                                <span th:if="${socialProvider.getType()} == 'linkedin'"
-                                    class="socialIconContainer gap6">
+                                <span th:if="${socialProvider.getType()} == 'linkedin'" class="socialIconContainer gap6">
                                     <img width="25" class="google-icon"
                                         src="https://storage.googleapis.com/oml-console-app-bucket/icons8-linkedin.svg" />
                                     <span th:text="${socialProvider.getName()}"></span>
                                 </span>
-                            </a>
+                            </a> -->
 
-                            <!-- <a
-                  href="https://accounts.google.com/o/oauth2/v2/auth?client_id=192643134735-hr655jov68tdtlii740b3rj2s9n2t1mp.apps.googleusercontent.com&amp;response_type=code&amp;scope=openid profile email&amp;state=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJwIjoiMTQwZGE5MDctOTAxZC00MjUzLThkYTktMDc5MDFkZDI1MzZkIiwicSI6ImNsaWVudF9pZD1ncmF2aXRlZSZyZXNwb25zZV90eXBlPWNvZGUmcmVkaXJlY3RfdXJpPWh0dHBzJTNBJTJGJTJGY29uc29sZS5vcmlnaW5tbC5jbG91ZCUyRnZhbGlkYXRlLXRva2VuIn0.wC8pagYfF8iEJXZRfTa3OtuKuT0uw7sr3OPpMaAR-o8&amp;redirect_uri=https://auth.iam.originml.cloud/originml/login/callback"
-                  class="social-link-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-google"
-                >
-                  <span class="socialIconContainer gap9">
-                    <img
-                      width="18"
-                      class="google-icon"
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                    />
-                    <span>Google</span>
-                  </span> </a
-                ><a
-                  href="https://www.linkedin.com/oauth/v2/authorization?client_id=86niueh0as7rsn&amp;redirect_uri=https://auth.iam.originml.cloud/originml/login/callback&amp;response_type=code&amp;scope=r_emailaddress%20r_liteprofile&amp;state=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJwIjoiZTY2MjEzNDMtNjQ2OS00OWFiLWEyMTMtNDM2NDY5MTlhYjg4IiwicSI6ImNsaWVudF9pZD1ncmF2aXRlZSZyZXNwb25zZV90eXBlPWNvZGUmcmVkaXJlY3RfdXJpPWh0dHBzJTNBJTJGJTJGY29uc29sZS5vcmlnaW5tbC5jbG91ZCUyRnZhbGlkYXRlLXRva2VuIn0.olfZXfx_ElRb8JqPgOB5AmXmna9QWC3EqOxFZqX0Mx4"
-                  class="social-link-button linkedin-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                >
-                  <span class="socialIconContainer gap6">
-                    <img
-                      width="25"
-                      class="google-icon"
-                      src="https://storage.googleapis.com/oml-console-app-bucket/icons8-linkedin.svg"
-                    />
-                    <span>Linkedin</span>
-                  </span>
-                </a> -->
+                        <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=192643134735-hr655jov68tdtlii740b3rj2s9n2t1mp.apps.googleusercontent.com&amp;response_type=code&amp;scope=openid profile email&amp;state=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJwIjoiMTQwZGE5MDctOTAxZC00MjUzLThkYTktMDc5MDFkZDI1MzZkIiwicSI6ImNsaWVudF9pZD1ncmF2aXRlZSZyZXNwb25zZV90eXBlPWNvZGUmcmVkaXJlY3RfdXJpPWh0dHBzJTNBJTJGJTJGY29uc29sZS5vcmlnaW5tbC5jbG91ZCUyRnZhbGlkYXRlLXRva2VuIn0.wC8pagYfF8iEJXZRfTa3OtuKuT0uw7sr3OPpMaAR-o8&amp;redirect_uri=https://auth.iam.originml.cloud/originml/login/callback"
+                            class="social-link-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-google">
+                            <span class="socialIconContainer gap9">
+                                <img width="18" class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                                <span>Google</span>
+                            </span> </a><a
+                                href="https://www.linkedin.com/oauth/v2/authorization?client_id=86niueh0as7rsn&amp;redirect_uri=https://auth.iam.originml.cloud/originml/login/callback&amp;response_type=code&amp;scope=r_emailaddress%20r_liteprofile&amp;state=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJwIjoiZTY2MjEzNDMtNjQ2OS00OWFiLWEyMTMtNDM2NDY5MTlhYjg4IiwicSI6ImNsaWVudF9pZD1ncmF2aXRlZSZyZXNwb25zZV90eXBlPWNvZGUmcmVkaXJlY3RfdXJpPWh0dHBzJTNBJTJGJTJGY29uc29sZS5vcmlnaW5tbC5jbG91ZCUyRnZhbGlkYXRlLXRva2VuIn0.olfZXfx_ElRb8JqPgOB5AmXmna9QWC3EqOxFZqX0Mx4"
+                            class="social-link-button linkedin-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                            <span class="socialIconContainer gap6">
+                                <img width="25" class="google-icon" src="https://storage.googleapis.com/oml-console-app-bucket/icons8-linkedin.svg" />
+                                <span>Linkedin</span>
+                                </span>
+                        </a>
                         </div>
-                    </div>
-                    <div class="login-form-additional-actions" th:if="${allowPasswordless  && hideLoginForm}">
-                        <a th:href="${passwordlessAction}">Sign in with fingerprint, device or security key</a>
-                    </div>
                 </div>
-            </div>
-        </div>
+                        <!-- NOTE PasswordLess action -->
+                        <!-- <div class="login-form-additional-actions" th:if="${allowPasswordless  && hideLoginForm}"><a th:href="${passwordlessAction}">Sign in with fingerprint, device or security key</a> -->
+                </div>
+                </div>
+                </div>
     </div>
 
     <!--[if lt IE 10]>
