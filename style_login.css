@@ -16,7 +16,7 @@ a {
   align-items: center;
   justify-content: center;
   color: #333;
-  font-size: 14px;
+  font-size: 0.875rem;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -59,7 +59,7 @@ a {
 
 .menu-item a {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 1.3rem;
   line-height: 20px;
 }
 
@@ -69,14 +69,14 @@ a {
 
 .login-greet {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 28px;
   color: #27303e;
 }
 
 .login-msg {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   color: #6f757e;
 }
@@ -109,11 +109,10 @@ a {
 }
 
 .login-form-title > label {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 400;
   margin-bottom: 5px;
   font-weight: 400;
-  font-size: 14px;
   line-height: 24px;
 }
 
@@ -137,18 +136,16 @@ a {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 17px;
- 
 }
 
 .login-form-additional-actions > div {
   margin: 5px;
 }
-.login-form-additional-actions > div a{
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    color: #2c6c7b;
-
+.login-form-additional-actions > div a {
+  font-weight: 700;
+  font-size: 0.87rem;
+  line-height: 16px;
+  color: #2c6c7b;
 }
 
 .login-form-content .input-textfield {
@@ -166,7 +163,7 @@ a {
   border-radius: 8px;
   padding: 16px 12px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 24px;
   color: #6f757e;
 }
@@ -205,17 +202,30 @@ a:focus {
 
 .social-login-buttons a {
   margin-bottom: 10px;
-  background: #fff !important;
+  background: #fff ;
 }
 
 .social-login-buttons a:hover {
-  background-color: rgba(158, 158, 158, 0.2) !important;
+  background-color: rgba(158, 158, 158, 0.2) ;
 }
 
+.social-btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px 16px 28px;
+    border: 1px solid #6F757E;
+    border-radius: 8px;
+    max-width: 120px;
+    width: 90%;
+    margin:8px ;
+}
+.social-btn span{
+    margin: 0 2px;
+}
 .mdl-social-button {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mdl-social-button:hover {
@@ -243,159 +253,22 @@ a:focus {
   margin-bottom: 10px;
 }
 
-.signup-or-separator hr {
-  width: 90%;
-  margin: -16px auto 10px auto;
-  border-top: 1px solid #dce0e0;
-}
-
 .signup-or-separator .text {
   display: inline-block;
   padding: 8px;
   margin: 0;
   background-color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 24px;
+  color: #6f757e;
 }
-
-/*********************
-* Social Buttons
-*********************/
-
-.btn-google {
-  color: #444;
-  background-color: #ffffff;
-}
-
-.btn-microsoft {
-  color: #444;
-  background-color: #ffffff;
-}
-
-.btn-facebook {
-  color: #fff;
-  background-color: #3b5998;
-  border: 1px solid #335190;
-}
-
-.btn-facebook:hover,
-.btn-facebook:focus {
-  color: #fff;
-  background-color: #294786;
-}
-
-.btn-twitter {
-  color: #fff;
-  background-color: #00aced;
-  border: 1px solid #009fdb;
-}
-
-.btn-twitter:hover,
-.btn-twitter:focus {
-  color: #fff;
-  background-color: #0090c7;
-}
-
-.btn-foursquare {
-  color: #fff;
-  background-color: #f94877;
-  border: 1px solid #f8215a;
-}
-
-.btn-foursquare:hover,
-.btn-foursquare:focus {
-  color: #fff;
-  background-color: #f71752;
-}
-
-.btn-github {
-  color: #fff;
-  background-color: #444;
-  border: 1px solid #3b3b3b;
-}
-
-.btn-github:hover,
-.btn-github:focus {
-  color: #fff;
-  background-color: #303030 !important;
-}
-
 .mdl-button:hover {
   padding: 0 22px;
 }
 
-.btn-instagram {
-  color: #fff;
-  background-color: #3f729b;
-}
-
-.btn-instagram:hover,
-.btn-instagram:focus {
-  color: #fff;
-  background-color: #305777 !important;
-}
-
-.btn-yahoo {
-  color: #fff;
-  background-color: #720e9e;
-}
-
-.btn-yahoo:hover,
-.btn-yahoo:focus {
-  color: #fff;
-  background-color: #600e85 !important;
-}
-
-.btn-live {
-  color: #fff;
-  background-color: #2672ec;
-}
-
-.btn-live:hover,
-.btn-live:focus {
-  color: #fff;
-  background-color: #125acd !important;
-}
-
-.btn-twitch {
-  color: #fff;
-  background-color: #6441a5;
-}
-
-.btn-twitch:hover,
-.btn-twitch:focus {
-  color: #fff;
-  background-color: #7550ba !important;
-}
-
-.btn-bitbucket {
-  color: #fff;
-  background-color: #10375e;
-}
-
-.btn-bitbucket:hover,
-.btn-bitbucket:focus {
-  color: #fff;
-  background-color: #0d2c4a !important;
-}
-
-.btn-spotify {
-  color: #fff;
-  background-color: #2ebd59;
-}
-
-.btn-spotify:hover,
-.btn-spotify:focus {
-  color: #fff;
-  background-color: #29a34e !important;
-}
-
-.btn-franceconnect {
-  background: none;
-  box-shadow: none;
-  height: 70px;
-}
-
 .material-icons {
-  font-size: 24px;
+  font-size: 1.5rem;
   /* Preferred icon size */
   display: inline-block;
   line-height: 1;
@@ -432,7 +305,6 @@ a:focus {
   align-items: center;
   justify-content: center;
   color: #6e6b7b !important;
-  text-transform: capitalize !important;
 }
 
 .gap9 {
@@ -469,6 +341,9 @@ a:focus {
         top: 0;
         z-index: 999;
     } */
+    *{
+        font-size: 14px;
+    }
 
   .header-logo {
     margin-left: 20px;
@@ -477,4 +352,13 @@ a:focus {
   .header-menu {
     display: none;
   }
+  /* Social Login */
+  .mdl-social-button {
+    flex-wrap: wrap;
+  }
+  .social-btn{
+    padding: 12px;
+    max-width: 100px;
+    width: 100%;
+}
 }
