@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OriginML Auth | Sign Up</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.blue_grey-blue.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+
+    <!-- Favicon and touch icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml"
+        href="https://storage.googleapis.com/oml-console-app-bucket/oml-favicon.svg" />
+
+    <script th:if="${bot_detection_plugin == 'google-recaptcha-v3-am-bot-detection'}"
+        th:src="${'https://www.google.com/recaptcha/api.js?render=' + bot_detection_configuration.siteKey + '&badge=bottomleft'}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-W4R2D2M");
+    </script>
+    <style>
+        body {
+            font-family: "Rubik", sans-serif !important;
+        }
+
+        .mdl-layout.mdl-js-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .login-container {
+            width: 480px;
+        }
+
+        .login-form {
+            background: #ffffff;
+            padding: 45px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            border-radius: 6px;
+        }
+
+        .login-form form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+
+        .login-form-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form-title>label {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 5px;
+            line-height: 1.1em;
+        }
+
+        .grayColor {
+            color: #6e6b7b !important;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .login-form-actions {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .login-form-actions>.no-margin-left {
+            margin-left: 0px;
+        }
+
+        .login-form-additional-actions {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #54a346 !important;
+        }
+
+        .login-form-additional-actions>div {
+            margin: 5px;
+        }
+
+        .login-form-content .input-textfield {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .login-form-content .input-textfield:last-child {
+            margin-bottom: 12px;
+        }
+
+        .login-form-content .input-textfield input {
+            border: 1px solid #e1e4e8;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .login-error-info {
+            font-weight: bold;
+            color: #ef3b3a;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .errorColor {
+            color: #ef3b3a !important;
+        }
+
+        .login-error-info .error {
+            font-weight: bold;
+        }
+
+        .login-error-info .error_description:before {
+            content: " : ";
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            text-decoration: none;
+            -o-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .social-login-buttons {
+            margin-top: 10px;
+        }
+
+        .social-login-buttons a {
+            margin-bottom: 10px;
+        }
+
+        .mdl-social-button {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mdl-social-button:hover {
+            color: transparent !important;
+        }
+
+        .mdl-button {
+            min-width: 100px;
+            color: #fff;
+            padding: 0 22px;
+            background-color: #54a346;
+            border-radius: 5px;
+            font-family: "Rubik", sans-serif !important;
+        }
+
+        .custom-signin:hover {
+            background-color: #54a346 !important;
+            color: #fff !important;
+        }
+
+        .signup-or-separator {
+            position: relative;
+            height: 34px;
+            text-align: center;
+            background: none;
+            margin-bottom: 10px;
+        }
+
+        .signup-or-separator hr {
+            width: 90%;
+            margin: -16px auto 10px auto;
+            border-top: 1px solid #dce0e0;
+        }
+
+        .signup-or-separator .text {
+            display: inline-block;
+            padding: 8px;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .material-icons {
+            font-family: "Material Icons";
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            /* Preferred icon size */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+
+            /* Support for IE. */
+            font-feature-settings: "liga";
+        }
+
+        .forgot-password-form-title>span.warning {
+            color: #ea5455;
+            font-weight: bold;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .center-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-form-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 17px;
+        }
+
+        #passwordSettings {
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 18px;
+            margin-bottom: 8px;
+        }
+
+        #passwordSettings p {
+            padding: 0 35px;
+            margin: 0 5px;
+            font-size: 11px;
+        }
+
+        #passwordSettings p:first-of-type {
+            margin-top: 5px;
+        }
+
+        .valid {
+            color: #54a346;
+        }
+
+        .valid:before {
+            position: relative;
+            left: -35px;
+            content: "✔";
+        }
+
+        .invalid {
+            color: #ef3b3a;
+        }
+
+        .invalid:before {
+            position: relative;
+            left: -35px;
+            content: "✖";
+        }
+
+        .advice {
+            color: black;
+        }
+
+        .advice:before {
+            position: relative;
+            left: -35px;
+            content: "•";
+        }
+
+        .mdl-button:disabled {
+            opacity: 0.4 !important;
+            color: #fff !important;
+            cursor: pointer !important;
+            background-color: #54a346 !important;
+        }
+
+        .togglePasswordEye {
+            cursor: pointer;
+            position: relative;
+            bottom: 29px;
+            left: 9px;
+        }
+
+        .hidePassword {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4R2D2M" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
+    <div class="mdl-layout__container">
+        <div class="mdl-layout mdl-js-layout">
+            <div class="login-container">
+                <div th:if="${error == null && success == null}" class="login-form">
+                    <div class="flex-container">
+                        <div class="login-form-title">
+                            <label>Sign up</label>
+                        </div>
+                        <div>
+                            <img class="originImage" width="150"
+                                src="https://storage.googleapis.com/oml-console-app-bucket/originml-logo-default.svg"
+                                alt="OriginML" />
+                        </div>
+                    </div>
+                    <div>
+                        <span class="grayColor" th:if="${warning == null}">Please fill in this form to create your
+                            account.</span>
+                        <span th:switch="${warning}" th:if="${warning}" class="errorColor">
+                            <span th:case="invalid_password_value">Invalid password value. It does not comply with the
+                                password
+                                policy.</span>
+                            <span th:case="invalid_user_information">Invalid first name, last name or username.</span>
+                            <span th:case="invalid_email">Invalid email address.</span>
+                            <span th:case="*">Some information are missing or invalid.</span>
+                        </span>
+                    </div>
+                    <form id="form" role="form" th:action="${action}" method="post">
+                        <div class="login-form-content">
+                            <div style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                  ">
+                                <div class="input-textfield" style="width: 47%">
+                                    <label for="firstName">First name</label>
+                                    <input type="text" id="firstName" name="firstName" required />
+                                </div>
+                                <div class="input-textfield" style="width: 47%">
+                                    <label for="lastName">Last name</label>
+                                    <input type="text" id="lastName" name="lastName" required />
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column">
+                                <div style="display: none" class="input-textfield">
+                                    <label for="username">Username</label>
+                                    <input type="hidden" id="username" name="username" />
+                                </div>
+                                <div class="input-textfield">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required />
+                                </div>
+                            </div>
+
+                            <div class="input-textfield">
+                                <label for="password">Password</label>
+                                <div>
+                                    <input type="password" id="password" name="password" autocomplete="new-password"
+                                        required style="width: 89%; padding-left: 30px" />
+                                    <img src="https://storage.googleapis.com/oml-console-app-bucket/eye-solid.svg"
+                                        alt="eye-show" width="18" id="showPass"
+                                        class="togglePasswordEye showPassword" />
+                                    <img src="https://storage.googleapis.com/oml-console-app-bucket/eye-slash-solid.svg"
+                                        id="hidePass" alt="eye-close" width="18" class="hidePassword showPassword" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+                        <input type="hidden" th:name="client_id" th:value="${param.client_id}" />
+
+                        <input type="hidden" th:if="${bot_detection_plugin == 'google-recaptcha-v3-am-bot-detection'}"
+                            th:id="${bot_detection_configuration.get('tokenParameterName')}"
+                            th:name="${bot_detection_configuration.get('tokenParameterName')}" />
+
+                        <div th:if="${passwordSettings != null}" id="passwordSettings">
+                            <span style="font-size: 13px">Password policy :</span>
+                            <p th:if="${passwordSettings.minLength != null}" id="minLength" class="invalid">
+                                Contains at least
+                                <span th:text="${passwordSettings.minLength}" /> characters
+                            </p>
+                            <p th:if="${passwordSettings.includeNumbers}" id="includeNumbers" class="invalid">
+                                Contains a number
+                            </p>
+                            <p th:if="${passwordSettings.includeSpecialCharacters}" id="includeSpecialChar"
+                                class="invalid">
+                                Contains a special character
+                            </p>
+                            <p th:if="${passwordSettings.lettersInMixedCase}" id="mixedCase" class="invalid">
+                                Contains letters in mixed case
+                            </p>
+                            <p th:if="${passwordSettings.maxConsecutiveLetters != null}" id="maxConsecutiveLetters"
+                                class="valid">
+                                Max
+                                <span th:text="${passwordSettings.maxConsecutiveLetters}" />
+                                consecutive letters or numbers
+                            </p>
+                            <p th:if="${passwordSettings.excludePasswordsInDictionary}"
+                                id="excludePasswordsInDictionary" class="advice">
+                                Don't use common names or passwords
+                            </p>
+                            <p th:if="${passwordSettings.excludeUserProfileInfoInPassword}"
+                                id="excludeUserProfileInfoInPassword" class="advice">
+                                Don't use your profile information in password
+                            </p>
+                        </div>
+                        <div class="login-form-reverse">
+                            <button class="mdl-button custom-signin" id="submitBtn" type="submit">
+                                Sign up
+                            </button>
+                            <div class="login-form-additional-actions">
+                                <div>
+                                    <a th:href="${loginAction}">Back to login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div th:if="${success}" class="login-form">
+                    <div class="center-container">
+                        <div>
+                            <p style="text-align: center">
+                                Thanks for creating your account. Go back to your application
+                                to login.
+                            </p>
+                            <div>
+                                <div style="text-align: center">
+                                    <a th:href="${loginAction}">Back to login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div th:if="${error}" class="login-form">
+                    <div class="center-container login-error-info">
+                        <div>
+                            <p style="text-align: center" th:text="*{error_description}?: ${error}" class="error"></p>
+                            <div>
+                                <div style="text-align: center">
+                                    <a th:href="${loginAction}">Back to login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--[if lt IE 10]>
+      <script src="assets/js/placeholder.js"></script>
+    <![endif]-->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $(".mdl-textfield__input").focus(function () {
+                if (!this.value) {
+                    $(this).prop("required", true);
+                    $(this).parent().addClass("is-invalid");
+                }
+            });
+
+            $("#email").on("input", function () {
+                $("#username").val($(this).val());
+            });
+
+            $(".showPassword").on("click", function () {
+                var input = $("#password");
+                var show = $("#showPass");
+                var hide = $("#hidePass");
+                if (input.attr("type") === "password") {
+                    input.attr("type", "text");
+                    hide.removeClass("hidePassword").addClass("togglePasswordEye");
+                    show.removeClass("togglePasswordEye").addClass("hidePassword");
+                } else {
+                    input.attr("type", "password");
+                    hide.removeClass("togglePasswordEye").addClass("hidePassword");
+                    show.removeClass("hidePassword").addClass("togglePasswordEye");
+                }
+            });
+
+            $(".mdl-button")
+                .filter(":button")
+                .click(function (event) {
+                    /*[# th:if="${bot_detection_plugin == 'google-recaptcha-v3-am-bot-detection'}"]*/
+                    event.preventDefault();
+                    grecaptcha.ready(function () {
+                        grecaptcha
+                            .execute("6LeEx58fAAAAANnYJ2hcg7QqnyBzTRgSx1edBpPB", {
+                                action: "submit",
+                            })
+                            .then(function (token) {
+                                $("#" + "X-Recaptcha-Token").val(token);
+                                $("#form").unbind("submit").submit();
+                            });
+                    });
+                    /*[/]*/
+
+                    $(this).siblings(".mdl-textfield").addClass("is-invalid");
+                    $(this)
+                        .siblings(".mdl-textfield")
+                        .children(".mdl-textfield__input")
+                        .prop("required", true);
+                });
+        });
+
+        /*[# th:if="${passwordSettings != null}"]*/
+        submitBtn.disabled = true;
+        /*[/]*/
+
+        const passwordSettings = /*[[${passwordSettings}]]*/ null;
+    </script>
+    <script th:src="@{https://storage.googleapis.com/oml-console-app-bucket/passwordValidation.js}"></script>
+</body>
+
+</html>
